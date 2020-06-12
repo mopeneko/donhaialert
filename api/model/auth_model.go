@@ -43,7 +43,7 @@ func GetCredential(host string) (credential domain.Credential, err error) {
 	app, err := mastodon.RegisterApp(context.Background(), &mastodon.AppConfig{
 		Server:       "https://" + host,
 		ClientName:   "donhaialert",
-		RedirectURIs: "https://api.donhaialert.com/auth/callback",
+		RedirectURIs: "https://donhaialert.com/callback",
 		Scopes:       "read:accounts write:statuses",
 		Website:      "https://donhaialert.com/",
 	})
@@ -68,7 +68,7 @@ func GetAuthorizationURL(c echo.Context, credential *domain.Credential) string {
 			TokenURL:  "https://" + credential.Host + "/oauth/token",
 			AuthStyle: oauth2.AuthStyleInParams,
 		},
-		RedirectURL: "https://api.donhaialert.com/auth/callback",
+		RedirectURL: "https://donhaialert.com/callback",
 		Scopes:      []string{"read:accounts", "write:statuses"},
 	}
 
