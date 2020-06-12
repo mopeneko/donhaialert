@@ -26,5 +26,6 @@ func (controller *AuthController) Issue(c echo.Context) error {
 	}
 
 	url := model.GetAuthorizationURL(c, &credential)
-	return c.Redirect(http.StatusFound, url)
+	resp.Message = url
+	return c.JSON(http.StatusOK, &resp)
 }
