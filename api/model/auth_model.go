@@ -4,6 +4,7 @@ import (
 	"context"
 	"crypto/rand"
 	"encoding/base64"
+	"errors"
 	"github.com/gorilla/sessions"
 	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo-contrib/session"
@@ -20,6 +21,15 @@ type AuthIssueRequest struct {
 }
 
 type AuthIssueResponse struct {
+	Message string `json:"message"`
+}
+
+type AuthCallbackRequest struct {
+	Code  string `validate:"required"`
+	State string `validate:"required"`
+}
+
+type AuthCallbackResponse struct {
 	Message string `json:"message"`
 }
 
@@ -71,6 +81,28 @@ func GetAuthorizationURL(c echo.Context, credential *domain.Credential) string {
 
 	url := config.AuthCodeURL(state)
 	return url
+}
+
+func VerifyState(c echo.Context, state string) error {
+	sess, _ := session.Get("session", c)
+	sessState := sess.Values["state"]
+
+	if state != sessState {
+		return errors.New("stateが不正です。Cookieが無効になっていませんか。")
+	}
+
+	return nil
+}
+
+func StoreCode(c echo.Context, code string) {
+	sess, _ := session.Get("session", c)
+	sess.Options = &sessions.Options{
+		Path:     "/",
+		MaxAge:   600,
+		HttpOnly: true,
+	}
+	sess.Values["code"] = code
+	sess.Save(c.Request(), c.Response())
 }
 
 func generateRandomState() string {

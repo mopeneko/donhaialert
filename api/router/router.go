@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/gorilla/sessions"
 	"github.com/jinzhu/gorm"
-	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo-contrib/session"
+	"github.com/labstack/echo/v4"
 	"github.com/mopeneko/donhaialert/api/controller"
 	"github.com/mopeneko/donhaialert/api/database"
 	"github.com/mopeneko/donhaialert/api/domain"
@@ -24,6 +24,7 @@ func Init() {
 	authGroup := router.Group("/auth")
 	authController := &controller.AuthController{}
 	authGroup.GET("", authController.Issue)
+	authGroup.POST("/callback", authController.Callback)
 }
 
 func Run() {
