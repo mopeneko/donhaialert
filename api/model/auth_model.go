@@ -75,7 +75,11 @@ func GetAuthorizationURL(c echo.Context, credential *domain.Credential) string {
 	state := generateRandomState()
 
 	sess, _ := session.Get("session", c)
-	sess.Options = &sessions.Options{}
+	sess.Options = &sessions.Options{
+		Path:     "/",
+		MaxAge:   600,
+		HttpOnly: true,
+	}
 	sess.Values["state"] = state
 	sess.Save(c.Request(), c.Response())
 
