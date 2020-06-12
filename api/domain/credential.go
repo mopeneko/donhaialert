@@ -5,6 +5,6 @@ import "github.com/jinzhu/gorm"
 type Credential struct {
 	gorm.Model
 	Host         string
-	ClientId     string
+	ClientID     string
 	ClientSecret string
 }
