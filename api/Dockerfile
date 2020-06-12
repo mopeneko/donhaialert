@@ -10,6 +10,8 @@ RUN CGO_ENABLED=0 go build -o app
 
 FROM alpine:latest
 
+RUN apk add tzdata
+
 WORKDIR /root
 
 COPY --from=builder /app/app /root/
