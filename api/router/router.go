@@ -7,6 +7,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/mopeneko/donhaialert/api/controller"
 	"github.com/mopeneko/donhaialert/api/database"
 	"github.com/mopeneko/donhaialert/api/domain"
@@ -54,6 +55,9 @@ func initSession() {
 	}
 
 	router.Use(session.Middleware(sessions.NewCookieStore(secret.Secret)))
+	router.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"https://donhaialert.com"},
+	}))
 }
 
 func generateSecret() (b []byte, err error) {
