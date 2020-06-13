@@ -5,8 +5,6 @@ import "github.com/jinzhu/gorm"
 type AccessToken struct {
 	gorm.Model
 	AccessToken  string
-	CredentialID int
+	CredentialID uint
 	Credential   Credential
-	UserID       int
-	User         User
 }

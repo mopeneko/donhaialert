@@ -4,7 +4,9 @@ import "github.com/jinzhu/gorm"
 
 type User struct {
 	gorm.Model
-	TootsCount      uint
-	FollowsCount    uint
-	FollowersSecret uint
+	TootsCount     int64
+	FollowsCount   int64
+	FollowersCount int64
+	AccessTokenID  uint
+	AccessToken    AccessToken
 }

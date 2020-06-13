@@ -25,6 +25,11 @@ func Init() {
 	authController := &controller.AuthController{}
 	authGroup.GET("", authController.Issue)
 	authGroup.POST("/callback", authController.Callback)
+
+	settingsGroup := router.Group("/settings")
+	settingsController := &controller.SettingsController{}
+	settingsGroup.POST("", settingsController.Enable)
+	settingsGroup.DELETE("", settingsController.Disable)
 }
 
 func Run() {
