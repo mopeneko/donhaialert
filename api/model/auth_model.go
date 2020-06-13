@@ -81,6 +81,7 @@ func GetAuthorizationURL(c echo.Context, credential *domain.Credential) string {
 		HttpOnly: true,
 	}
 	sess.Values["state"] = state
+	sess.Values["host"] = credential.Host
 	sess.Save(c.Request(), c.Response())
 
 	url := config.AuthCodeURL(state)
