@@ -1,11 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import NavBar from "buefy";
+import Buefy from "buefy";
 
 Vue.config.productionTip = false;
 
-Vue.use(NavBar);
+Vue.use(Buefy);
 
 new Vue({
   router,
