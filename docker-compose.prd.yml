@@ -4,6 +4,8 @@ services:
   api:
     build: api
     restart: always
+    ports:
+      - "1323:1323"
 
   mysql:
     image: mysql:8.0
