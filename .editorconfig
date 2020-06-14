@@ -8,6 +8,6 @@ charset = utf-8
 [*.go]
 indent_style = tab
 
-[*.{md,yml,ts,vue}]
+[*.{md,yml,js,ts,vue}]
 indent_style = space
 indent_size = 2
