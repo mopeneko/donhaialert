@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  api:
+    build: api
+    restart: always
+    ports:
+      - "1323:1323"
+
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: donhaialert
+      MYSQL_USER: mopeneko
+      MYSQL_PASSWORD: mopepass

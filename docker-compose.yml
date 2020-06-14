@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  web:
+    build: web
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./web/src:/app/src"
+
+  api:
+    build: api
+    ports:
+      - "1323:1323"
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: donhaialert
+      MYSQL_USER: mopeneko
+      MYSQL_PASSWORD: mopepass
