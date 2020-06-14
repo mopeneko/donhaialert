@@ -11,7 +11,7 @@ import { Vue, Component } from "vue-property-decorator";
 @Component
 export default class Settings extends Vue {
   changeSettings(method: string) {
-    fetch("https://api/donhaialert.com/settings", {
+    fetch("https://api.donhaialert.com/settings", {
       method
     })
       .then(res => {
