@@ -18,6 +18,7 @@ export default class Settings extends Vue {
       .then(res => {
         if (res.ok) {
           this.$router.push("/");
+          return
         }
         throw new Error("");
       })
