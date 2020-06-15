@@ -16,7 +16,8 @@ export default class Callback extends Vue {
       body: JSON.stringify({
         code: this.$route.query.code,
         state: this.$route.query.state
-      })
+      }),
+      credentials: "include"
     })
       .then(res => {
         if (res.ok) {
