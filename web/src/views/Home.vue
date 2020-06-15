@@ -59,7 +59,9 @@ export default class Home extends Vue {
   host = "";
 
   login() {
-    fetch(`https://api.donhaialert.com/auth?host=${this.host}`)
+    fetch(`https://api.donhaialert.com/auth?host=${this.host}`, {
+      credentials: "include"
+    })
       .then(res => {
         if (res.ok) {
           return res.json();
