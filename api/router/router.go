@@ -56,7 +56,8 @@ func initSession() {
 
 	router.Use(session.Middleware(sessions.NewCookieStore(secret.Secret)))
 	router.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"https://donhaialert.com"},
+		AllowOrigins:     []string{"https://donhaialert.com"},
+		AllowCredentials: true,
 	}))
 }
 
