@@ -76,7 +76,7 @@ func SettingsEnable(c echo.Context) error {
 func SettingsDisable(c echo.Context) error {
 	sess, _ := session.Get("session", c)
 	code := sess.Values["code"].(string)
-	accessToken := &domain.AccessToken{AccessToken: code}
+	accessToken := domain.AccessToken{AccessToken: code}
 	err := database.DB.
 		Where(&accessToken).
 		Find(&accessToken).
