@@ -36,7 +36,7 @@
       <hr />
 
       <p class="title is-4">開発者</p>
-      <p><a href="https//lem0n.cc" target="_blank">もぺねこ</a> です。</p>
+      <p><a href="https://lem0n.cc" target="_blank">もぺねこ</a> です。</p>
 
       <hr />
 
