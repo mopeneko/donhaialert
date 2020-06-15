@@ -14,7 +14,7 @@ func (controller *SettingsController) Enable(c echo.Context) error {
 
 	err := model.SettingsEnable(c)
 	if err != nil {
-		v.Render(c, http.StatusInternalServerError, err.Error())
+		return v.Render(c, http.StatusInternalServerError, err.Error())
 	}
 
 	return v.Render(c, http.StatusOK, "")
@@ -25,7 +25,7 @@ func (controller *SettingsController) Disable(c echo.Context) error {
 
 	err := model.SettingsDisable(c)
 	if err != nil {
-		v.Render(c, http.StatusInternalServerError, err.Error())
+		return v.Render(c, http.StatusInternalServerError, err.Error())
 	}
 
 	return v.Render(c, http.StatusOK, "")
