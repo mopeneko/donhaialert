@@ -8,7 +8,7 @@ import { Vue, Component } from "vue-property-decorator";
 @Component
 export default class Callback extends Vue {
   beforeCreate() {
-    fetch("https://api.donhaialert.com/callback", {
+    fetch("https://api.donhaialert.com/auth/callback", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8"
