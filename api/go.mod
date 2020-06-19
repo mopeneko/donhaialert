@@ -25,7 +25,6 @@ require (
 	github.com/cznic/mathutil v0.0.0-20181122101859-297441e03548 // indirect
 	github.com/cznic/strutil v0.0.0-20181122101858-275e90344537 // indirect
 	github.com/cznic/xc v0.0.0-20181122101856-45b06973881e // indirect
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/disintegration/gift v1.2.1 // indirect
 	github.com/edsrzf/mmap-go v1.0.0 // indirect
 	github.com/fogleman/gg v1.3.0 // indirect
@@ -51,9 +50,7 @@ require (
 	github.com/labstack/echo v3.3.10+incompatible // indirect
 	github.com/labstack/echo-contrib v0.9.0
 	github.com/labstack/echo/v4 v4.1.16
-	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/lyft/protoc-gen-star v0.4.15 // indirect
-	github.com/mattn/go-colorable v0.1.6 // indirect
 	github.com/mattn/go-mastodon v0.0.4
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/nbutton23/zxcvbn-go v0.0.0-20180912185939-ae427f1e4c1d // indirect
@@ -63,7 +60,6 @@ require (
 	github.com/rwcarlsen/goexif v0.0.0-20190401172101-9e8deecbddbd // indirect
 	github.com/spf13/afero v1.2.2 // indirect
 	github.com/syndtr/goleveldb v1.0.0 // indirect
-	github.com/valyala/fasttemplate v1.1.0 // indirect
 	golang.org/x/build v0.0.0-20200610210258-973ac284c062 // indirect
 	golang.org/x/crypto v0.0.0-20200604202706-70a84ac30bf9 // indirect
 	golang.org/x/image v0.0.0-20200609002522-3f4726a040e8 // indirect
@@ -71,7 +67,6 @@ require (
 	golang.org/x/net v0.0.0-20200602114024-627f9648deb9 // indirect
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	golang.org/x/sys v0.0.0-20200610111108-226ff32320da // indirect
-	golang.org/x/text v0.3.2 // indirect
 	golang.org/x/time v0.0.0-20200416051211-89c76fbcd5d1 // indirect
 	google.golang.org/api v0.26.0 // indirect
 	google.golang.org/genproto v0.0.0-20200610212329-df9b449b0ff2 // indirect
