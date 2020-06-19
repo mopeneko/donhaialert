@@ -7,7 +7,6 @@ import (
 
 func main() {
 	database.Init()
-	database.DB.LogMode(true)
 	router.Init()
 	router.Run()
 }
