@@ -15,3 +15,8 @@ services:
       MYSQL_DATABASE: donhaialert
       MYSQL_USER: mopeneko
       MYSQL_PASSWORD: mopepass
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data: {}
