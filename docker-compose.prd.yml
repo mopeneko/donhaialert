@@ -7,6 +7,10 @@ services:
     ports:
       - "1323:1323"
 
+  alerter:
+    build: alerter
+    restart: always
+
   mysql:
     image: mysql:8.0
     restart: always
