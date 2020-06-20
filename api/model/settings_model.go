@@ -56,7 +56,7 @@ func SettingsEnable(c echo.Context) error {
 	}
 
 	accessToken := domain.AccessToken{
-		AccessToken: code,
+		AccessToken: config.AccessToken,
 	}
 
 	user := domain.User{
