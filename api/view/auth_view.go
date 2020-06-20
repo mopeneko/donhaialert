@@ -15,6 +15,6 @@ func (v AuthIssueView) Render(c echo.Context, code int, message string) error {
 type AuthCallbackView struct{}
 
 func (v AuthCallbackView) Render(c echo.Context, code int, message string) error {
-	resp := model.AuthIssueResponse{Message: message}
+	resp := model.AuthCallbackResponse{Message: message}
 	return c.JSON(code, &resp)
 }
